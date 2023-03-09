@@ -1,0 +1,13 @@
+if __name__ == '__main__':
+
+    # TASK 2
+    data = input("Enter starter string: ")
+    while True:
+        substitution = input("Enter substitution: ")
+        if substitution.lower() == "no":
+            break
+        origin_str = substitution[:substitution.find('->')]
+        substitution_str = substitution[substitution.find('->')+2:]
+        data = data.replace(origin_str, substitution_str)
+        print(data)
+        
