@@ -1,0 +1,20 @@
+if __name__ == '__main__':
+    
+    # TASK 5
+    data = input("Enter message: ").lower()
+    key = int(input("Enter Secret Key: "))
+    if key > 0:
+        key %= 26
+    else:
+        key = (key % 26) - 26
+    encrypted_message = ''
+    for i in range(len(data)):
+        if data[i] == ' ':
+            encrypted_message += '1'
+        elif data[i] == '1':
+            encrypted_message += ' '
+        elif 'a' <= data[i] <= 'z':
+            encrypted_message += chr(((ord(data[i]) + key - ord('a')) % 26 + ord('a')))
+
+    print(encrypted_message)
+    
